@@ -19,7 +19,7 @@
 
               <div class="box-body ">
                <div class="col-sm-12">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <img alt="Click here to upload image" @if(!empty($user->profilepic)) src="{{$user->profilepic}}" @else src="/img/profilepic.jpg" @endif id="profile-image1" class="img-circle img-responsive"/>
                   <div  align="center"> 
                     <div style="color:#999;" >{{$user->name}}</div>

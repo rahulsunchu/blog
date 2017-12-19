@@ -1,6 +1,7 @@
 
 @include('layouts.head')
 @include ('layouts.nav2')
+@include ('layouts.header')
 
 @guest
 <li><a href="{{ route('login') }}">Login</a></li>
