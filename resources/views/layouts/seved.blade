@@ -1,0 +1,124 @@
+@guest
+@include('welcome'); 
+@else
+@include ('layouts.head')
+@include ('layouts.nav2')
+@include ('layouts.header')
+
+<div class="container ">
+  <div class="row">
+
+    <div class="col-lg-9 col-md-9 col-sm-9 blog-main">
+      <div class="post-preview">
+
+        @if( $all === 'all')
+        @foreach ($posts as $post)
+
+        <a href="/post/{{ $post->id }}">
+          <b class="post-title">
+            {{ $post->title}}
+          </b>
+        </a>
+        @if($post->user_id == Auth::user()->id)
+        <a href="/post/edit/{{ $post->id }}" class="float-right btn btn-default btn-sm pull-right"> <span class="fa fa-edit"></span>Edit Post</a>
+        <a href="/post/delete/{{ $post->id }}" data-toggle="confirmation" data-title="Confirm delete?" class="float-right btn btn-default btn-sm pull-right"> <span class="fa fa-trash"></span>Delete Post</a>
+        @endif
+        <p class="post-subtitle" >
+          {{ $post->body }}
+        </p>
+        <p class="post-meta">Posted by
+          <a href="#">{{ $post->name }} @</a>
+          {{ $post->created_at }} 
+
+
+          @if($post->created_at != $post->updated_at) <strong> edited on </strong>{{ $post->updated_at }} @endif
+
+              &nbsp; {{-- <a >  
+                @foreach($comment_count as $cm)
+                  @if($cm->id == $post->id)
+                      {{$cm->cid}} Comments
+                  @endif
+                @endforeach </a>
+                --}}
+                <button data-id={{$post->id}} class="commentbtn float-right btn btn-default btn-sm"><span class="fa fa-comment"></span>Comment</button> 
+              </p>
+              <div id="commentform{{$post->id}}" class="panel-body" style="display: none">
+                <form class="form-horizontal" method="POST" action="/comment/store/{{$post->id}}">
+                  {{ csrf_field() }}
+                  <div class="form-group">
+                    <label for="body" class="col-md-4 control-label">Comment</label>
+                    <div class="col-md-6">
+                      <input id="body" class="form-control" name="body" placeholder="Your Comment Here!"  required>
+                      @if ($errors->has('email'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                      <button type="submit" class="btn btn-primary">
+                        Submit Comment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <hr>
+              @endforeach
+              @else
+              <?php $i = 1; ?>
+              @foreach ($posts as $post)
+              @if($i < 10)
+              <a href="/post/{{ $post->id }}">
+                <b class="post-title">
+                  {{ $post->title}}
+                </b>
+              </a>
+              @if($post->user_id == Auth::user()->id)
+              <a href="/post/edit/{{ $post->id }}" class="float-right btn btn-default btn-sm pull-right"> <span class="fa fa-edit"></span>Edit Post</a>
+              <a href="/post/delete/{{ $post->id }}" id="deletepost" data-toggle="confirmation" data-title="Confirm delete?" class="float-right btn btn-default btn-sm pull-right"> <span class="fa fa-trash"></span>Delete Post</a>
+              @endif
+              <p class="post-subtitle" >
+                {{ $post->body }}
+              </p>
+              <p class="post-meta">Posted by
+                <a href="#">{{ $post->name }}</a> on
+                {{ $post->created_at }} 
+                @if($post->created_at != $post->updated_at) <strong> edited on </strong>{{ $post->updated_at }} @endif
+              &nbsp; 
+                <button data-id={{$post->id}} class="commentbtn float-right btn btn-default btn-sm pull-right"><span class="fa fa-comment"></span>Comments @foreach($comment_count as $cm)
+                  @if($cm->id == $post->id)
+                  ({{$cm->cid}})
+                  @endif
+                @endforeach</button> 
+              </p>
+              @include('comments.show')
+              <hr>
+              @endif
+              <?php $i++ ?>
+              @endforeach
+
+
+              @endif
+
+            </div>
+
+            <!-- Pager -->
+            <div class="clearfix">
+              <a class="btn btn-primary float-right" href="/index/all">Older Posts &rarr;</a>
+            </div>
+          </div>
+
+          @include('layouts.sidebar')
+
+        </div>
+      </div>
+      {{-- @yield('content') --}}
+
+
+      @include ('layouts.footer')
+      @endguest
+
+

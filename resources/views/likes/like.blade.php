@@ -1,0 +1,2 @@
+{{Request::all()}}
+sdfasdfsdf

@@ -1,0 +1,11 @@
+.navbar-nav {
+    float: right;
+    margin-right: 117px !important;
+    margin: 0;
+}
+
+.navbar-inverse {
+    background-color: #cecece;
+    border-color: #afafaf;
+    opacity: 0.9;
+}
