@@ -41,8 +41,8 @@
           </div>
           <div class="col-md-3">
             @if($post->user_id == Auth::user()->id)
-            <a href="/post/edit/{{ $post->id }}" class="pull-right" > <span class="fa fa-edit fa-edit2"></span></a>
-            <a href="/post/delete/{{ $post->id }}" id="deletepost" data-toggle="confirmation" data-title="Confirm delete?" class="pull-right"> <span class="fa fa-trash fa-trash2"></span></a>
+            <a href="/post/edit/{{ $post->id }}" class="pull-right" data-toggle="tooltip" data-placement="bottom" title="edit post"> <span class="fa fa-edit fa-edit2"></span></a>
+            <a href="/post/delete/{{ $post->id }}" id="deletepost" data-toggle="confirmation" data-title="Confirm delete?" class="pull-right"> <span class="fa fa-trash fa-trash2" data-toggle="tooltip" data-placement="bottom" title="delete post"></span></a>
             @endif
           </div>
         </div>

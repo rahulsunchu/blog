@@ -2,7 +2,7 @@
 @include('welcome'); 
 @else
 @include ('layouts.head')
-@include ('layouts.nav2')
+@include ('layouts.nav')
 {{-- @include ('layouts.header') --}}
 <br><br>
 <br><br>
@@ -55,42 +55,42 @@
 
           <br>
 
-          <label for="firstname" class="col-sm-6 col-xs-6 tital " >First Name:</label>
-          <div class="col-sm-6 col-xs-6 "><input id="title" class="form-control" name="name" value="{{ $user->name }}" required></div>
+          <label for="firstname" class="col-sm-6 col-xs-6 tital " >First Name <span style="color:red">*</span></label>
+          <div class="col-sm-6 col-xs-6  "><input id="title" class="form-control " name="name" value="{{ $user->name }}" required></div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
 
-          <label for="lastname" class="col-sm-6 col-xs-6 tital " >Last Name:</label>
+          <label for="lastname" class="col-sm-6 col-xs-6 tital " >Last Name</label>
           <div class="col-sm-6 col-xs-6 "><input id="title" class="form-control" name="lastname" value="{{ $user->lastname}}" ></div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
 
-          <label for="email" class="col-sm-6 col-xs-6 tital " >Email:</label>
+          <label for="email" class="col-sm-6 col-xs-6 tital " >Email <span style="color:red">*</span></label>
           <div class="col-sm-6 col-xs-6 "><input id="title" class="form-control" name="email" value="{{$user->email}}" readonly></div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
 
-          <label for="dob" class="col-sm-6 col-xs-6 tital " >Date Of Birth:</label>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " >Date Of Birth <span style="color:red">*</span></label>
           <div class="col-sm-6 col-xs-6 " ><input type="date" class="form-control" name="dob" value="{{$user->dob}}" required></div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
 
-          <label for="designation" class="col-sm-6 col-xs-6 tital " >Designation:</label>
+          <label for="designation" class="col-sm-6 col-xs-6 tital " >Designation <span style="color:red">*</span></label>
           <div class="col-sm-6 col-xs-6 "><input  class="form-control" name="designation" value="{{ $user->designation}}" required></div>
           <div class="clearfix"></div>
           <div class="bot-border"></div>
 
-          <label for="dob" class="col-sm-6 col-xs-6 tital " >Highest Education:</label>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " >Highest Education</label>
           <div class="col-sm-6 col-xs-6 "><input  class="form-control" name="edulevel" value="{{$user->edulevel}}" ></div>
 
           <div class="clearfix"></div>
           <div class="bot-border"></div>
-          <label for="dob" class="col-sm-6 col-xs-6 tital " >College:</label>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " >College</label>
           <div class="col-sm-6 col-xs-6 "><input class="form-control" name="college" value="{{$user->college}}" ></div>
 
           <div class="clearfix"></div>
           <div class="bot-border"></div>
-          <label for="dob" class="col-sm-6 col-xs-6 tital " >Blood Group:</label>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " >Blood Group</label>
           <div class="col-sm-6 col-xs-6 ">
             <select class="form-control" name="bloodgroup" value="{{$user->bloodgroup}}">
               <option value='{{ $user->bloodgroup }}' selected>{{ $user->bloodgroup }}</option>
@@ -107,11 +107,17 @@
 
           <div class="clearfix"></div>
           <div class="bot-border"></div>
-          <label for="dob" class="col-sm-6 col-xs-6 tital " >Phone:</label>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " >Phone</label>
           <div class="col-sm-6 col-xs-6 "><input type="tel" class="form-control" name="phone" value="{{$user->phone}}" ></div>
 
           <div class="clearfix"></div>
           <div class="bot-border"></div>
+          <label for="dob" class="col-sm-6 col-xs-6 tital " ></label>
+          <div class="col-sm-6 col-xs-6 "><span style="color:red">*</span> Indicates required field</div>
+
+          <div class="clearfix"></div>
+          <div class="bot-border"></div>
+           
           <div class="form-group">
             <div class="col-md-6 col-md-offset-5  ">
 

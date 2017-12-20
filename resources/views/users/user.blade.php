@@ -161,9 +161,10 @@
 
           <label for="designation" class="col-sm-6 col-xs-6 tital " >Designation:</label>
           <div class="col-sm-6 col-xs-6 ">{{ $user->designation}}</div>
+@if($user->id === Auth::id())
+
           <div class="clearfix"></div>
           <div class="bot-border"></div>
-
           <label for="dob" class="col-sm-6 col-xs-6 tital " >Highest Education:</label>
           <div class="col-sm-6 col-xs-6 ">{{$user->edulevel}}</div>
 
@@ -181,20 +182,21 @@
           <div class="bot-border"></div>
           <label for="dob" class="col-sm-6 col-xs-6 tital " >Phone:</label>
           <div class="col-sm-6 col-xs-6 ">{{$user->phone}}</div>
+      @endif
 
         </div>
       </div>
       <div class="row"> 
         @if($user->id === Auth::id())
         <div class="col-sm-3 col-md-offset-6">
-          <a href="/userposts" class='btn btn-primary '>View Your Posts {{ $postsByUser }}</a>
+          <a href="/userposts" class='btn btn-primary '>View Your Posts ({{ $postsByUser }})</a>
         </div>
         <div class="col-sm-3">
           <a href="/user/edit" class='btn btn-primary '>Edit profile</a>
         </div>
         @else
-        <div class="col-sm-3 col-md-offset-9" >
-          <br><br><a href="/userposts">{{ $user->name }}'s Posts &nbsp; ({{ $postsByUser }})</a>
+        <div class="col-sm-5 col-md-offset-7" >
+          <br><br><a href="/userposts/{{ $user->id }}" class='btn btn-primary '>View {{ $user->name }}'s Posts &nbsp; ({{ $postsByUser }})</a>
         </div>
         @endif
       </div>

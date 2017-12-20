@@ -8,7 +8,7 @@
 <div class="container ">
   <div class="row">
     <div class="col-lg-9 col-md-9 col-sm-9 blog-main">
-        <h2>Posts by {{ Auth::user()->name }}</h2>
+        <h2>Posts by {{ $username }}</h2>
       <br>
       <div class="post-preview">
         @if($all == 0)

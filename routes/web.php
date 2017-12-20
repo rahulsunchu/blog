@@ -19,6 +19,7 @@ Route::get('/user/{userid}', 'UserController@profile');
 Route::post('/user/update', 'FileController@update');
 // Route::get('/postAcceptor', 'FileController@imgstore');
 Route::get('/userposts', 'UserController@index');
+Route::get('/userposts/{userid}', 'UserController@userindex');
 Route::get('post', 'PostController@post');
 Route::post('post/create', 'PostController@store');
 Route::get('post/edit/{postid}', 'PostController@edit');

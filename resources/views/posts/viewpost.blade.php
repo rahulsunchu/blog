@@ -15,7 +15,7 @@
           </div>
           <div class="col-md-3">
             @if($post->user_id == Auth::user()->id)
-            <a href="/post/edit/{{ $post->id }}" class="pull-right" data-toggle="tooltip" data-placement="bottom" title="delete post"> <span class="fa fa-edit fa-edit2"></span></a>
+            <a href="/post/edit/{{ $post->id }}" class="pull-right" data-toggle="tooltip" data-placement="bottom" title="edit post"> <span class="fa fa-edit fa-edit2"></span></a>
             <a href="/post/delete/{{ $post->id }}" class="pull-right" id="deletepost" data-toggle="confirmation" data-title="Confirm delete?"> <span class="fa fa-trash fa-trash2"  data-toggle="tooltip" data-placement="bottom" title="delete post"></span></a>
             @endif
           </div>
@@ -55,16 +55,16 @@
         <div class='row'>
           <div class="col-md-1"></div>
           <div class="col-md-11">
-            <div class="post-subtitle" style="margin-left: -18px;" >
+            <div class="post-subtitle post-subtitle2 " style="margin-left: -18px;" >
               <?php 
               $htmldata = strip_tags($post->body,"<p>");
               ?>
-              @if(strlen($post->body) > 400)
-               {!! substr($htmldata,0,400)  !!}...
-              @else
-               {!! $htmldata !!}
+              {{-- @if(strlen($post->body) > 400) --}}
+               {!! $htmldata  !!}
+              {{-- @else --}}
+               {{-- {!! $htmldata !!} --}}
               {{-- {!!  str_replace("tinymce/source/","/tinymce/source/",$post->body) !!} --}}
-              @endif
+              {{-- @endif --}}
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
           <div class="col-md-11" style="margin-left: -18px;">
             <p class="post-meta">Published on
               {{ $post->created_at }} 
-              @if(!empty($post->edited_at)) <strong> edited on </strong>{{ $post->edited_at }} @endif
+              {{-- @if(!empty($post->edited_at)) <strong> edited on </strong>{{ $post->edited_at }} @endif --}}
 
               <a data-id={{$post->id}} class="commentbtn pull-right">
                 <span class="fa fa-comment-o"></span>Comments 
