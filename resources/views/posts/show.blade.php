@@ -79,7 +79,7 @@
         <div class='row padallover'>
             <div class="post-body" style="margin-left: -18px;" >
               {{-- {!!  $post->body !!} --}}
-              {!!  str_replace("imgtinymce/","/imgtinymce/",$post->body) !!}
+              {!!  $post->body !!}
               
             </div>
         </div>

@@ -1,8 +1,8 @@
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-inverse2 navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/index"> <img id='imagelogo' src="/img/logo2.png"/> </a>
+      <a class="navbar-brand" href="/index"> <img id='imagelogo' class='imagelogo' src="/img/logo2.png"/> </a>
     </div>
     <ul class="nav navbar-nav">
       @guest

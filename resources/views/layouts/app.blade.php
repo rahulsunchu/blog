@@ -57,7 +57,7 @@
             </div>
         </nav>
         --}}
-        @include('layouts.nav2')
+        @include('layouts.nav')
         <br><br><br><br>
         
         @include('layouts.partials._notifications')

@@ -2,12 +2,12 @@
   /*******************************************************
    * Only these origins will be allowed to upload images *
    ******************************************************/
-  $accepted_origins = array("http://localhost:8000", "http://192.168.1.29:8000", "http://example.com");
+  $accepted_origins = array("http://localhost:8000", "http://192.168.1.29:8000", "http://127.0.0.1:8000", "http://example.com");
 
   /*********************************************
    * Change this line to set the upload folder *
    *********************************************/
-  $imageFolder = "/imgtinymce/";
+  $imageFolder = "imgtinymce/";
 
   reset ($_FILES);
   // var_dump($_FILES);
@@ -43,7 +43,9 @@
     }
 
     // Accept upload if there was no origin, or if it is an accepted origin
-    $filetowrite = $imageFolder . $temp['name'];
+  $imageFolder2 = "imgtinymce/";
+    // 
+    $filetowrite = $imageFolder2 . $temp['name'];
     // print_object($imageFolder);
     // exit;
     move_uploaded_file($temp['tmp_name'], $filetowrite);
@@ -51,7 +53,7 @@
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
     // { location : '/your/uploaded/image/file'}
-    echo json_encode(array('location' => $filetowrite));
+    echo json_encode(array('location' => '/'.$filetowrite));
   } else {
     // Notify editor that the upload failed
     header("HTTP/1.0 500 Server Error");

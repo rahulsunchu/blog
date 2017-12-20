@@ -2,7 +2,7 @@
 @include('welcome'); 
 @else
 @include ('layouts.head')
-@include ('layouts.nav2')
+@include ('layouts.nav')
 {{-- @include ('layouts.header') --}}
 {{-- <br><br>
 <br><br>

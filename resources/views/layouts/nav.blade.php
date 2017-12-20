@@ -1,21 +1,17 @@
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="/index"> <img id='imagelogo' src="/img/logo.png"> </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-           
-           
-            <li class="nav-item">
-              <a class="nav-link" href="/post">Sample Post</a>
-            </li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/index"> <img id='imagelogo' src="/img/logo2.png"/> </a>
+    </div>
+    <ul class="nav navbar-nav">
+      @guest
+                            <li><a href="{{ route('login') }}" class='navbar-btn'>Login</a></li>
+                            <li><a href="{{ route('register') }}" class='navbar-btn'>Register</a></li>
+                        @else
+      <li @if(Request::path() === 'post') class="active" @endif><a class='navbar-btn navbar-btnbright' href="/post">Create Post</a></li>
       <li class="nav-item dropdown">
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">{{ Auth::user()->name }}
+        <a class="dropdown-toggle nav-link navbar-btn" data-toggle="dropdown" href="#">{{ Auth::user()->name }}
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li class="nav-item">
@@ -32,7 +28,8 @@
           </li>
         </ul>
       </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      @endif
+    </ul>
+  </div>
+</nav>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

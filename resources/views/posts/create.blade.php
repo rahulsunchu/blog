@@ -1,13 +1,12 @@
 
 @include('layouts.head')
-@include ('layouts.nav2')
-@include ('layouts.header')
+@include ('layouts.nav')
 
 @guest
 <li><a href="{{ route('login') }}">Login</a></li>
 <li><a href="{{ route('register') }}">Register</a></li>
 @else
-<br><br><br>
+<br><br><br><br>
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
