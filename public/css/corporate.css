@@ -191,13 +191,6 @@ header.masthead .overlay {
     .panel-heading.panel-heading2 {
         font-size: 36px;
     }
-    .post-preview .post-subtitle {
-        word-break: break-all;
-    }
-    .post-preview{
-        word-break: break-all;
-
-    }
     .panel{
         margin-bottom: 6px;
     }
@@ -210,7 +203,7 @@ header.masthead .overlay {
     }
     #profile-image1 {
         cursor: pointer;
-        margin-left: 21px;
+        margin-left: 53px;
         width: 125px;
         height: 125px;
         border:2px solid #03b1ce ;
@@ -250,8 +243,8 @@ header.masthead .overlay {
         padding-left: 
     }
     #logoimage{
-            position: relative;
-    top: 22px;
+        position: relative;
+        top: 22px;
         width: 40%;
         margin-left: 29%;
     }
@@ -276,6 +269,7 @@ header.masthead .overlay {
         }
         #deletepost{
             color: #b92d2d;
+            margin-top: 1px;
         }
         .classnone{
             margin-bottom: 0%;
@@ -303,16 +297,31 @@ header.masthead .overlay {
             color: #3d596d;
             text-transform: capitalize;
             text-decoration: none !important;
-            }.post-subtitle{
+            }
+            .post-subtitle{
                 /*font-family: "Noto Serif", Georgia, "Times New Roman", Times, serif;*/
                 font-size: 16px;
+                line-height: 21px;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 padding-bottom: : 10px;
             }
+            .post-subtitle{
+                max-height: 52px;
+                overflow: hidden;
+                margin-bottom: 10px
+
+            }
             .post-body p img {
                 max-width: 100%;
                 height: auto;
+                border: solid 1px #41414147;
+            }
+            .post-body img {
+                max-width: 100%;
+                height: auto;
+                border: solid 1px #41414147;
+
             }
             .postdiv {
                 background-color: #cecece2b;
@@ -344,6 +353,8 @@ header.masthead .overlay {
                 background: #e6e6e62b;
                 margin-bottom: 10px;
                 padding: 10px; 
+                color: #414141;
+
                 /*border-bottom: #aaa 0.5px solid ;  */
                 /*box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2),0 1px 20px 0 rgba(0,0,0,0.19);*/
             }
@@ -463,7 +474,10 @@ header.masthead .overlay {
         top: 17%;
         left: 17%;
     }
-    textarea {
-        max-width: 100%; 
-        max-height: 100%;
+    
+    #textarea {
+        height: 600px;
+    }
+    .required:after { 
+        content:" *"; 
     }

@@ -5,8 +5,8 @@ $(document).ready(function(){
      $("#commentform" + dataid).toggle();
  });
 
-    $("#imagelogo").hide();
-    $(".navbar-inverse").css({"background-color": "transparent", "border-color": "transparent"});
+    $(".imagelogo").hide();
+    $(".navbar-inverse2").css({"background-color": "transparent", "border-color": "transparent"});
     // $(".navbar-inverse").css('background-color': 'transparent');
     
 
@@ -15,14 +15,14 @@ $(document).ready(function(){
 
                  // set distance user needs to scroll before we start fadeIn
                  if ($(this).scrollTop() < 300) {
-                    $('#imagelogo').fadeOut();
-    $(".navbar-inverse").css({"background-color": "transparent", "border-color": "transparent"});
+                    $('.imagelogo').fadeOut();
+    $(".navbar-inverse2").css({"background-color": "transparent", "border-color": "transparent"});
                     
 
                 } else {
-                    $(".navbar-inverse").css({"background-color": "#cecece", "border-color": "#afafaf"});
+                    $(".navbar-inverse2").css({"background-color": "#cecece", "border-color": "#afafaf"});
 
-                    $('#imagelogo').fadeIn();
+                    $('.imagelogo').fadeIn();
                 }
             });
 
